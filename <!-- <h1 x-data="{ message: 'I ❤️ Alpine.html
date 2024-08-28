@@ -1,0 +1,111 @@
+    <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ counts: 0 }">
+        <button x-on:click="counts++">Increment</button>
+     
+        <span x-text="counts"></span>
+    </div> -->
+    <!-- <span x-text="foo">Will output: "bar"</span> -->
+ 
+    <!-- <div x-data="{ bar: 'Joel' }">
+        <span x-text="foo">
+            <!-- Will output: "bar" --></span>
+ 
+
+
+<!-- <div x-data="{count: 0}">
+    <div x-data="{increase(){this.count++}}">
+    <button @click="increase()">Increase</button>
+</div>
+<span x-text="count"></span>
+
+<div x-data="{decrease() {(this.count > 0) ? this.count-- : ''}}">
+    <button @click="decrease()">Decrease</button>
+</div> --> -->
+
+<!-- </div>
+    
+<div x-data="() => ({
+count: 0,
+
+Increment(){
+    this.count++;
+},
+
+decrement(){
+    if(this.count > 0)  this.count--;
+    }
+
+
+})">
+<button @click="Increment">Increase</button>
+<span x-text="count"></span>
+<button @click="decrement">Decrease</button>
+
+ -->
+
+<!-- <div x-data="{open: true}">
+    <button @click="open = false"
+     x-show="open"> 
+     hide me
+    </button>
+
+    <button @click="open = !open">
+        show hide me
+    </button>
+
+
+</div>    -->
+<!-- <form @submit.prevent="console.log('submitted')" action="/foo">
+    <button>Submit</button>
+</form> -->
+
+<!-- <div x-data="{ message: '' }">
+    <input x-on:keydown.enter="message = 'Enter key pressed!'" type="text">
+    <p x-text="message"></p>
+</div> -->
+
+<!-- <select x-model.boolean="isActive">
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+</select>
+<span x-text="typeof isActive"></span> -->
+<!-- <div x-data="{colors: ['blue', 'red', 'white']}">
+    <template x-for="color in colors">
+        <li x-text="color"></li>
+    </template>
+
+
+</div> -->
+<!-- <div x-data="{ open: false }">
+    <button @click="open = ! open">Toggle Dropdown</button>
+ 
+    <div x-show="open" x-transition>
+        Dropdown Contents...
+    </div>
+</div> -->
+<!-- 
+<div x-data="{ isActive: false }">
+    <button @click="isActive = !isActive"
+            x-bind:class="{ 'bg-blue-500 text-white': isActive, 'bg-gray-300 text-black': !isActive }">
+        Toggle Active State
+    </button>
+</div> -->
+    
+<!-- <div x-data="{show: false}">
+    <button x-on:click="show= !show">Button</button>
+   <div>
+        <span x-show="show">This is will show</span>
+    </div>
+
+</div> -->
+
+
+<!-- <div>
+    <section x-data="{maxlenght: 100}">
+        <label for="message"></label>
+        <textarea  placeholder="Enter Text" name="message" id="message" rows="10" x-ref="message"
+         @keydown="maxlenght = 100-$refs.message.value.length">
+        </textarea><br>
+        <span x-text="maxlenght + ' of characters remaining'"></span>
+
+    </section>

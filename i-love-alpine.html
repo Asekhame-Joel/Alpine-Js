@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+   
+<style>
+    .completed{
+        text-decoration: line-through;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-10 mx-auto mt-5 text-center">
+                <div x-data="data()">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <input type="text" class="form-control" @keyup.enter="Addtask" x-model="task">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" @click="Addtask">create</button>
+                        </div>
+                        <div class="col-5 mt-5 mx-auto">
+                        <ul class="list-group">
+                            <template x-for="(task, index) in TasksSortedByComplete" :key="task.id">
+                                <li class="list-group-item" style="list-style-type: none;">
+                                    
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="form-check">                                      
+                                      <input type="checkbox" class="form-check-input" @click="complete(task)">
+                                        <label class="form-check-label" x-text="task.title" x-bind:class="{'completed': task.completed }"></label>
+                        
+                                    </div>
+                                    <div>
+                                    <button @click="deleteTask(index)"  class="btn-close"></button>
+                                    </div>
+
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                        </div>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+
+</html>
